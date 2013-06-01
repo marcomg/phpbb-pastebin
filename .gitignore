@@ -1,0 +1,3 @@
+*.directory
+template/compiles/*.php
+template/cache/*.php
