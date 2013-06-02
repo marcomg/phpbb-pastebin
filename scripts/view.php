@@ -11,6 +11,9 @@ else{
     exit;
 }
 
+$smarty->caching = true;
+$smarty->cache_lifetime = -1;
+
 $_ = $db->query("SELECT * FROM `$config_table_paste` WHERE `tid` = '$tid'");
 $_ = $db->fetch_array($_);
 
@@ -33,23 +36,24 @@ else{
         $smarty->assign('geshi_lines', true);
     }
     
-    $code = stripslashes($_['code']);
-    $geshi = new GeSHi($code, $_['lang']);
-    $geshi->enable_line_numbers($flag);
-    $code = $geshi->parse_code();
-    
-    $smarty->assign('title', T_('View paste withh tid: ').$tid);
-    
-    $smarty->assign('tid', $tid);
-    $smarty->assign('username', $_['username']);
-    $smarty->assign('posted', $_['posted']);
-    $smarty->assign('code', $code);
-    $smarty->assign('lang', $_['lang']);
-    $smarty->assign('expires', $_['expires']);
-    $smarty->assign('sha1', $_['sha1']);
-    $smarty->assign('hidden', $_['hidden']);
-    
-    $smarty->display('view.tpl');
+    if(!$smarty->isCached('view.tpl', $tid.$flag)) {
+        $code = stripslashes($_['code']);
+        $geshi = new GeSHi($code, $_['lang']);
+        $geshi->enable_line_numbers($flag);
+        $code = $geshi->parse_code();
+        
+        $smarty->assign('title', T_('View paste withh tid: ').$tid);
+        
+        $smarty->assign('tid', $tid);
+        $smarty->assign('username', $_['username']);
+        $smarty->assign('posted', $_['posted']);
+        $smarty->assign('code', $code);
+        $smarty->assign('lang', $_['lang']);
+        $smarty->assign('expires', $_['expires']);
+        $smarty->assign('sha1', $_['sha1']);
+        $smarty->assign('hidden', $_['hidden']);
+    }
+    $smarty->display('view.tpl', $tid.$flag);
 }
 
 ?>

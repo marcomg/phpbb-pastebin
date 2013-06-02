@@ -27,5 +27,5 @@ $smarty->cache_dir = ROOT.'/template/cache/';
 //$smarty->compile_check = true;
 
 // Force recompile. To enable only in develop mode
-$smarty->force_compile=false;
+//$smarty->force_compile=false;
 ?>

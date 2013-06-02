@@ -48,6 +48,7 @@
                             <li><a href="index.php?q=list"><i class="icon-book icon-white"></i> {t}Publc past list{/t}</a></li>
                             <li><a href="index.php?q=create"><i class="icon-plus icon-white"></i> {t}Add a new paste{/t}</a></li>
                         </ul>
+{nocache}
 {if $user_menu}
                         <!-- Right nav for users-->
                         <ul class="nav pull-right">
@@ -73,12 +74,13 @@
                             </li>
                         </ul>
 {/if}
+{/nocache}
                     </div><!--/.nav-collapse -->
                 </div>
             </div>
         </div>
-        
-        {if isset($error)}
+{nocache}
+{if isset($error)}
         <!-- ERRORS
             ================================================== -->
         <div class="container">
@@ -86,4 +88,5 @@
                 <p class="text-error">{$error}</p>
             </div>
         </div>
-        {/if}
+{/if}
+{/nocache}
