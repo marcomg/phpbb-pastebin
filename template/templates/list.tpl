@@ -4,10 +4,10 @@
             <ul>
 {section name=id loop=$tid}
                 <li>
-                    {t}Posting{/t} {t}from{/t} <a href="index.php?q=view/{$tid[id]}"><b>{$username[id]}</b></a> {t}posted at{/t} <b>{$posted[id]|date_format:"%d/%m/%Y %k:%M:%S"}</b> {t}espires:{/t} <b>{if $expires[id]==-1}{t}Never{/t}{else}{{$posted[id]+$expires[id]}|date_format:"%d/%m/%Y %k:%M:%S"}{/if}</b>
+                    {t}Posting{/t} {t}from{/t} <b>{$username[id]}</b> {t}posted at{/t} <b>{$posted[id]|date_format:"%d/%m/%Y %k:%M:%S"}</b> {t}espires:{/t} <b>{if $expires[id]==-1}{t}Never{/t}{else}{{$posted[id]+$expires[id]}|date_format:"%d/%m/%Y %k:%M:%S"}{/if}</b>
                     <br/>
                     {* WARNING!! DON'T REMOVE ESCAPE OR YOU'LL DIE! *}
-                    {t}Little extract:{/t} {$code[id]|escape:"html"}
+                    <a href="index.php?q=view/{$tid[id]}">{t}Little extract:{/t} {$code[id]|escape:"html"}</a>
                 </li>
 {sectionelse}
             </ul>

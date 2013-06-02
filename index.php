@@ -15,6 +15,9 @@ $phpbb = new phpbb_integrator($config_phpbb_path);
 $db = new MYSQL();
 $smarty = new Smarty();
 
+// Cron
+require(ROOT.'/includes/cron.php');
+
 // Smarty config
 require(ROOT.'/includes/config_smarty.php');
 

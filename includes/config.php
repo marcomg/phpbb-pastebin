@@ -18,6 +18,10 @@ Script config
 */
 // Length of many casual ids
 $config_leng = 5;
+
+// Enable local cron
+$config_enable_cron = true;
+$config_cron_time = 50;
 /*
 phpBB config
 */
