@@ -3,7 +3,7 @@
             <h1>{$title}</h1>
             <h2>{t}About phpbb-pastebin{/t}</h2>
             <p>
-                {t}phpbb-pastebin is a pastebin completed integred with phpbb3.{/t}
+                {t}phpbb-pastebin is a pastebin completed integrated with phpbb3.{/t}
             </p>
             <p>
                 {t 1='<a href="https://github.com/marcomg">Marco Guerrini</a>'}It was developed by %1 and is written in PHP.{/t}

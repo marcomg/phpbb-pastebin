@@ -248,10 +248,8 @@
                 </select>
                 
                 <label>{t}<b>Code:</b> To ensure legibility, keep your code lines under 80 characters long. Include comments to indicate what you need feedback on.{/t}</label>
-                <textarea name="code"></textarea>
+                <textarea name="code" rows="6" class="span6"></textarea>
                 
-                <!--<label>{t}Load text from a file{/t}</label>
-                <input type="file" name="upload"/>-->
                 
                 <label>
                     {t}Create this paste as a non-public (hidden) paste{/t}

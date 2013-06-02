@@ -45,13 +45,6 @@ else{
         $hidden = 0;
     }
     
-    /*// if uploaded a file
-    if(empty($code) and !empty($_FILES['upload']['tmp_name'])){
-        $code = file_get_contents($_FILES['upload']['tmp_name']);
-    }
-    else{
-        echo '??'.$_FILES['file']['tmp_name'];
-    }*/
     
     // if wrap text required
     if(isset($_POST['wrap']) and $_POST['wrap']==1){
