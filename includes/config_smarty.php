@@ -1,6 +1,6 @@
 <?php
 // Dir readable from web
-const DIR_TEMPLATE_VAR = './template/templates/';
+const DIR_TEMPLATE_VAR = './template/templates';
 
 // Template dir
 $smarty->template_dir = ROOT.'/template/templates/';
