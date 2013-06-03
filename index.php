@@ -27,15 +27,13 @@ T_bindtextdomain($config_domain, LOCALE_DIR);
 T_textdomain($config_domain);
 
 // Load needed script (if don't exist load error script)
-if(!isset($_GET['q']) or empty($_GET['q'])){
+if(!isset($_GET['q']) or empty($_GET['q']))
     header('location: index.php?q=pages/index');
-}
-else{
+else
     $q = explode('/', $_GET['q']);
-}
-if(file_exists(ROOT.'/scripts/'.$q[0].'.php')){
+
+if(file_exists(ROOT.'/scripts/'.$q[0].'.php'))
     include(ROOT.'/scripts/'.$q[0].'.php');
-}
 else{
     $q[1] = 404;
     include(ROOT.'/scripts/errors.php');
