@@ -3,10 +3,12 @@
 CORE FUNCTIONS
 */
 
-/*
-Generate a string
+/**
+* Get a casual alfanumeric string
+* @param int $long_string_gen Chars number of casual string
+* @return string Casual string
 */
-function string_gen($long_string_gen){
+function getCasualStr($long_string_gen){
 	$string_gen=NULL;
 	for ($i=1; $i<=$long_string_gen; $i++){
 		if ($i % 2){
@@ -20,10 +22,13 @@ function string_gen($long_string_gen){
 }
 
 
-/*
-Get size in bytes
+/**
+* Get bytes value form kB(k), MB(M), GB(G)
+* @param string $val Size in kB, MB, GB
+* @return int Byte size
+* @deprecated
 */
-function return_bytes($val) {
+function getBytes($val) {
     $val = trim($val);
     $last = $val{strlen($val)-1};
     switch($last) {
@@ -42,14 +47,18 @@ function return_bytes($val) {
         
         default:
             return $val;
+        break;
     }
 }
 
 
-/*
-Get human size
+/**
+* Get Human value form Bytes
+* @param int $val Size in byte
+* @return string size in KiB or MiB or GiB or TiB or PiB or EiB
+* @deprecated
 */
-function return_human_value($val){
+function getHumanValue($val){
     if(!is_numeric($val)){
         return false;
     }
@@ -115,10 +124,13 @@ function return_human_value($val){
 
 }
 
-/*
-Get language
+/**
+* Get language from browser or cookies
+* @param string $default_language Default language to user if there aren't results
+* @param array $known_languages Languages supported
+* @return string Language to use
 */
-function get_language($default_language = 'en_US', $known_languages = array('en_US', 'it_IT')){
+function getLanguage($default_language = 'en_US', $known_languages = array('en_US', 'it_IT')){
     if(!empty($_COOKIE['language'])){
         if(in_array($_COOKIE['language'], $known_languages)){
             return $_COOKIE['language'];
@@ -144,15 +156,18 @@ function get_language($default_language = 'en_US', $known_languages = array('en_
 /*
 SCRIPT FUNCTIONS
 */
-// Get tid (an unique id of pastes (tid: text id))
-function get_tid(){
+/**
+* Get a casual unique id for pastes
+* @return string Unique id
+*/
+function getNewTid(){
     global $db;
     global $config_leng;
     global $config_table_paste;
     
     $while = true;
     while($while){
-        $tid = string_gen($config_leng);
+        $tid = getCasualStr($config_leng);
         $result = $db->query("SELECT * FROM `$config_table_paste` WHERE `tid` = '$tid'");
         $result = $db->fetch_array($result);
         if(empty($result['tid'])){

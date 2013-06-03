@@ -1,5 +1,5 @@
 <?php
-if($phpbb->is_logged()){
+if($phpbb->isLogged()){
     $smarty->assign('user_menu', true);
 }
 

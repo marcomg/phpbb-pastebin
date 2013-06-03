@@ -1,8 +1,7 @@
 <?php
-//header('location: index.php');
 
 // If not logged print login page
-if(!$phpbb->is_logged()){
+if(!$phpbb->isLogged()){
     header('location: index.php?q=pages/requiredlogin');
     exit;
 }
@@ -21,7 +20,7 @@ switch($q[1]){
         }
         else{
             $tid = $db->escape_string($q[2]);
-            $db->query("DELETE FROM `$config_table_paste` WHERE `username` = '{$phpbb->get_username()}' AND `tid` = '$tid'");
+            $db->query("DELETE FROM `$config_table_paste` WHERE `username` = '{$phpbb->getUsername()}' AND `tid` = '$tid'");
             header('location: index.php?q=pastesmanager');
         }
     break;
@@ -34,7 +33,7 @@ switch($q[1]){
             $from = 0;
         }
         
-        $query = $db->query("SELECT * FROM `paste` WHERE `username` = '{$phpbb->get_username()}' ORDER BY `id` DESC LIMIT $from , 10");
+        $query = $db->query("SELECT * FROM `paste` WHERE `username` = '{$phpbb->getUsername()}' ORDER BY `id` DESC LIMIT $from , 10");
 
         while($result = $db->fetch_array($query)){
             $tid[] = $result['tid'];

@@ -1,6 +1,10 @@
 <?php
+
 class phpbb_integrator {
-    // Load php
+    /**
+    * Get user info from phpBB database
+    * @param string $config_phpbb_path Patch where is installed phpBB
+    */
     function __construct($config_phpbb_path){
         global $phpbb_root_path, $phpEx, $user, $db, $config, $cache, $template;
         
@@ -28,8 +32,11 @@ class phpbb_integrator {
         unset($phpbb_root_path, $phpEx, $user, $db, $config, $cache, $template);
     }
     
-    // Control if is logged
-    function is_logged(){
+    /**
+    * Check if user il logged
+    * @return boolean True user logged, false user not logged
+    */
+    function isLogged(){
         if($this->user->data['is_registered']){
             return true;
         }
@@ -38,33 +45,50 @@ class phpbb_integrator {
         }
     }
     
-    // Get user name
-    function get_username(){
+    /**
+    * Get username
+    * @return string Username
+    */
+    function getUsername(){
         return $this->user->data['username'];
     }
     
-    // Get user id
-    function get_user_id(){
+    /**
+    * Get phpBB id of the user
+    * @return int User id
+    */
+    function getUserId(){
         return $this->user->data['user_id'];
     }
     
-    // Get user email
-    function get_user_email(){
+    /**
+    * Get the email of the user
+    * @return string Email of the user
+    */
+    function getUserEmail(){
         return $this->user->data['user_email'];
     }
     
-    // Get user ip
-    function get_user_ip(){
+    /**
+    * Get the IP of the user
+    * @return string IP of the user
+    */
+    function getUserIp(){
         return $this->user->ip;
     }
     
-    // Get user language
-    function get_user_lang(){
+    /**
+    * Get the language of the user
+    * @return string Language of the user
+    */
+    function getUserLang(){
         return $this->user->data['user_lang'];
     }
     
-    
-    
+    /**
+    * Test function
+    * @deprecated
+    */
     function printr(){
         print_r($this->user);
     }

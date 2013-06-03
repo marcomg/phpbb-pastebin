@@ -1,7 +1,7 @@
 <?php
 
 // If not logged print login page
-if(!$phpbb->is_logged()){
+if(!$phpbb->isLogged()){
     header('location: index.php?q=pages/requiredlogin');
     exit;
 }
@@ -19,7 +19,7 @@ elseif(0){
     
 }
 else{
-    $username = $phpbb->get_username();
+    $username = $phpbb->getUsername();
     
     $posted = time();
     
@@ -27,7 +27,7 @@ else{
     
     $lang = $db->escape_string($_POST['lang']);
     
-    $tid = get_tid();
+    $tid = getNewTid();
     
     if(is_numeric($_POST['expire'])){
         $expires = $_POST['expire'];
