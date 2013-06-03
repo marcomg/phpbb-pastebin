@@ -4,8 +4,9 @@ class phpbb_integrator {
     /**
     * Get user info from phpBB database
     * @param string $config_phpbb_path Patch where is installed phpBB
+    * @param array or null $config_id_admin_groups An array with user IDs that if an user has is admin
     */
-    function __construct($config_phpbb_path){
+    function __construct($config_phpbb_path, $config_id_admin_groups = null){
         global $phpbb_root_path, $phpEx, $user, $db, $config, $cache, $template;
         
         // If isset some of global vars I have to exit for not replace them
@@ -27,6 +28,7 @@ class phpbb_integrator {
                 
         // Copy vars
         $this->user = $user;
+        $this->adminGroups = $config_id_admin_groups;
         
         // Unset vars
         unset($phpbb_root_path, $phpEx, $user, $db, $config, $cache, $template);
@@ -62,6 +64,15 @@ class phpbb_integrator {
     }
     
     /**
+    * Get phpBB id of the user
+    * @return int User id
+    */
+    function 
+    getGroupId(){
+        return $this->user->data['group_id'];
+    }
+    
+    /**
     * Get the email of the user
     * @return string Email of the user
     */
@@ -83,6 +94,21 @@ class phpbb_integrator {
     */
     function getUserLang(){
         return $this->user->data['user_lang'];
+    }
+    
+    /**
+    * Check if user il an admin
+    * @return boolean True user logged as admin, false user not logged as admin or not logged
+    */
+    function isAdmin(){
+        if(!is_array($this->adminGroups))
+            return false;
+        else{
+            if(in_array($this->getGroupId(), $this->adminGroups))
+                return true;
+            else
+                return false;
+        }
     }
     
     /**

@@ -28,6 +28,12 @@ phpBB config
 // Path where is installed phpBB
 $config_phpbb_path = '../phpBB3/';
 
+// Group id (of phpBB) where if an user has it as default group is an admin
+// set it as null if disable admins
+// set an array with numbers of groups to enable it
+// example : $config_id_admin_groups = array(5, 4); for administrators, global moderators
+$config_id_admin_groups = null;
+
 /*
 Gettext config
 */
