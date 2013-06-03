@@ -19,6 +19,9 @@ Script config
 // Length of many casual ids
 $config_leng = 5;
 
+// Length of preview of pastes
+$config_preview_leng = 20;
+
 // Enable local cron
 $config_enable_cron = true;
 $config_cron_time = 50;
@@ -32,7 +35,7 @@ $config_phpbb_path = '../phpBB3/';
 // set it as null if disable admins
 // set an array with numbers of groups to enable it
 // example : $config_id_admin_groups = array(5, 4); for administrators, global moderators
-$config_id_admin_groups = null;
+$config_id_admin_groups = array(1,2,3,4,5,6,7,8,9,10);
 
 /*
 Gettext config

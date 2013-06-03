@@ -16,7 +16,7 @@ if(!$smarty->isCached('list.tpl', $from)) {
         $tid[] = $result['tid'];
         $username[] = $result['username'];
         $posted[] = $result['posted'];
-        $code[] = str_replace(PHP_EOL, '', substr($result['code'], 0, 20));
+        $code[] = str_replace(PHP_EOL, '', substr($result['code'], 0, $config_preview_leng));
         $lang[] = $result['lang'];
         $expires[] = $result['expires'];
     }
