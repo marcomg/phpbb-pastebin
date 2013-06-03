@@ -55,7 +55,7 @@
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-wrench icon-white"></i> {t}Tools{/t}<b class="caret"></b></a><!-- aggiungere  icon-white?? -->
                                 <ul class="dropdown-menu">
-                                    <li><a href="index.php?q=pastesmanager"><i class="icon-book"></i> {t}Pastes manager{/t}</a></li>
+                                    <li><a href="index.php?q=ucp"><i class="icon-book"></i> {t}Pastes manager{/t}</a></li>
                                     <li class="divider"></li>
                                     <li><a href="index.php?q=pages/about"><i class="icon-info-sign"></i> {t}About{/t}</a></li>
                                 </ul>

@@ -14,11 +14,11 @@ if(empty($q[1]))
 switch($q[1]){
     case 'delete':
         if(empty($q[2]))
-            header('location: index.php?q=pastesmanager');
+            header('location: index.php?q=ucp');
         else{
             $tid = $db->escape_string($q[2]);
             $db->query("DELETE FROM `$config_table_paste` WHERE `username` = '{$phpbb->getUsername()}' AND `tid` = '$tid'");
-            header('location: index.php?q=pastesmanager');
+            header('location: index.php?q=ucp');
         }
     break;
     
@@ -43,7 +43,7 @@ switch($q[1]){
         $smarty->assign('expires', $expires);
         $smarty->assign('from', $from);
         
-        $smarty->display('pastesmanager.tpl');
+        $smarty->display('ucp.tpl');
     break;
 }
 
