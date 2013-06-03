@@ -1,14 +1,9 @@
 <?php
-if($phpbb->isLogged()){
+if($phpbb->isLogged())
     $smarty->assign('user_menu', true);
-}
 
-if(!empty($q[1]) and is_numeric($q[1])){
-    $from = $db->escape_string($q[1]);
-}
-else{
-    $from = 0;
-}
+$from = (!empty($q[1]) and is_numeric($q[1])) ? $db->escape_string($q[1]) : 0;
+
 
 $smarty->caching = true;
 $smarty->cache_lifetime = 20;

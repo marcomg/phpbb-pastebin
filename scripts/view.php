@@ -1,11 +1,9 @@
 <?php
-if($phpbb->isLogged()){
+if($phpbb->isLogged())
     $smarty->assign('user_menu', true);
-}
 
-if(!empty($q[1])){
+if(!empty($q[1]))
     $tid = $db->escape_string($q[1]);
-}
 else{
     header('location: index.php?q=errors/404');
     exit;
@@ -18,9 +16,8 @@ $_ = $db->query("SELECT * FROM `$config_table_paste` WHERE `tid` = '$tid'");
 $_ = $db->fetch_array($_);
 
 // Not found
-if(empty($_)){
+if(empty($_))
     header('location: index.php?q=errors/404');
-}
 else{
     // Set line numbers
     if(!empty($q[2]) and $q[2]=='nl'){

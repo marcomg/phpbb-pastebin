@@ -5,19 +5,16 @@ if(!$phpbb->isLogged()){
     header('location: index.php?q=pages/requiredlogin');
     exit;
 }
-else{
+else
     $smarty->assign('user_menu', true);
-}
 
-if(empty($q[1])){
+if(empty($q[1]))
     $q[1] = 'overview';
-}
 
 switch($q[1]){
     case 'delete':
-        if(empty($q[2])){
+        if(empty($q[2]))
             header('location: index.php?q=pastesmanager');
-        }
         else{
             $tid = $db->escape_string($q[2]);
             $db->query("DELETE FROM `$config_table_paste` WHERE `username` = '{$phpbb->getUsername()}' AND `tid` = '$tid'");
@@ -26,12 +23,7 @@ switch($q[1]){
     break;
     
     default:
-        if(!empty($q[2]) and is_numeric($q[2])){
-            $from = $db->escape_string($q[2]);
-        }
-        else{
-            $from = 0;
-        }
+        $from = (!empty($q[2]) and is_numeric($q[2])) ? $db->escape_string($q[2]) : 0;
         
         $query = $db->query("SELECT * FROM `paste` WHERE `username` = '{$phpbb->getUsername()}' ORDER BY `id` DESC LIMIT $from , 10");
 

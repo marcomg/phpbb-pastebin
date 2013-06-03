@@ -1,16 +1,13 @@
 <?php
-if($phpbb->isLogged()){
+if($phpbb->isLogged())
     $smarty->assign('user_menu', true);
-}
 
-if(empty($q[1])){
+if(empty($q[1]))
     $q[1] = '?';
-}
 
 switch($q[1]){
     case 'index':
         header('Location: index.php?q=list');
-        //$smarty->display('page_index.tpl');
     break;
     
     case 'requiredlogin':
