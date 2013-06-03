@@ -1,3 +1,4 @@
 *.directory
 template/compiles/*.php
 template/cache/*.php
+includes/config.php
