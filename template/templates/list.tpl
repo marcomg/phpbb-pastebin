@@ -15,7 +15,7 @@
 {/section}
             <ul class="pager">
                 <li class="previous{if $from-10<0} disabled{/if}">
-                    <a href={if $from-10<0}"#"{else}"index.php?q=list/{$from-10}{/if}">&larr; {t}Newer{/t}</a>
+                    <a href={if $from-10<0}"#"{else}"index.php?q=list/{$from-10}"{/if}>&larr; {t}Newer{/t}</a>
                 </li>
                 <li class="next{if empty($tid)} disabled{/if}">
                     <a href={if empty($tid)}#{else}"index.php?q=list/{$from+10}"{/if}>{t}Older{/t} &rarr;</a>
