@@ -1,0 +1,234 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Marco Guerrini <mmarcogguerrini@cryptolab.net>, 2013.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-06-04 18:26+0200\n"
+"PO-Revision-Date: 2013-06-04 18:51+0200\n"
+"Last-Translator: Marco Guerrini <mmarcogguerrini@cryptolab.net>\n"
+"Language-Team: Italian <kde-i18n-it@kde.org>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 1.4\n"
+
+msgid "Acp panel overview"
+msgstr "Panoramica pannello acp"
+
+msgid "Create a paste"
+msgstr "Crea un paste"
+
+msgid "Error 404"
+msgstr "Errore 404"
+
+msgid "Pastes list"
+msgstr "Lista dei paste"
+
+msgid "Required login"
+msgstr "Accesso richiesto"
+
+msgid "About"
+msgstr "Informazioni"
+
+msgid "Personal pastes list"
+msgstr "Lista dei paste personali\t"
+
+msgid "View paste with tid: "
+msgstr "Vedi paste con il tid: "
+
+msgid "Delete by tid"
+msgstr "Cancella per tid"
+
+msgid "Delete by username"
+msgstr "Cancella per username"
+
+msgid "Posting"
+msgstr "Pubblicazione"
+
+msgid "from"
+msgstr "da"
+
+msgid "posted at"
+msgstr "pubblicato"
+
+msgid "espires:"
+msgstr "scade:"
+
+msgid "Never"
+msgstr "Mai"
+
+msgid "Paste type:"
+msgstr "Tipo di paste"
+
+msgid "hidden"
+msgstr "nascosto"
+
+msgid "public"
+msgstr "pubblico"
+
+msgid "Little extract:"
+msgstr "Piccolo estratto:"
+
+msgid "Delete"
+msgstr "Cancella"
+
+msgid "No paste in the database!"
+msgstr "Nessun paste nel database!"
+
+msgid "Newer"
+msgstr "Più nuovi"
+
+msgid "Older"
+msgstr "Più vecchi"
+
+msgid "Paste zone"
+msgstr "Zona paste"
+
+msgid "Language"
+msgstr "Linguaggio"
+
+msgid "Expiration"
+msgstr "Scadenza"
+
+msgid ""
+"<b>Code:</b> To ensure legibility, keep your code lines under 80 characters "
+"long. Include comments to indicate what you need feedback on."
+msgstr ""
+"<b>Codice:</b> Per garantire la leggibilità, tieni le linee di codice sotto "
+"gli 80 caratteri "
+"di lunghezza. Includi i commenti per indicare cosa ti serve come feedback."
+
+msgid "Create this paste as a non-public (hidden) paste"
+msgstr "Crea questo paste come non pubblico (nascosto)"
+
+msgid "Wrap text at 78 characters"
+msgstr "Tagliare il testo al 78° carattere"
+
+msgid "Send"
+msgstr "Invia"
+
+msgid "Cancel"
+msgstr "Cancella"
+
+msgid ""
+"Reality is appearance, mistakes are always in wait.<br/>This page doesn't "
+"exist, now, one day it might.<br/>Come back to a safer harbour <a href="
+"\"index.php\">home page</a>"
+msgstr ""
+"La realtà è apparenza, l'errore è sempre in agguato.<br>Questa pagina ora non "
+"esiste, ma un giorno forse, chissà.<br/>Torna ad un porto sicuro <a href= "
+"\"index.php\">home page</a>"
+
+msgid "Admin control panel"
+msgstr "Pannello di controllo amministratore"
+
+msgid "Home Page"
+msgstr "Pagina Principale"
+
+msgid "Publc paste list"
+msgstr "Lista paste pubblici"
+
+msgid "Add a new paste"
+msgstr "Aggiungi un nuovo paste"
+
+msgid "Tools"
+msgstr "Strumenti"
+
+msgid "Pastes manager"
+msgstr "Gestione paste"
+
+msgid "About phpbb-pastebin"
+msgstr "Informazioni su phpbb-pastebin"
+
+msgid "phpbb-pastebin is a pastebin completed integrated with phpbb3."
+msgstr "phpbb-pastebin è un pastebin completamente integrato in phpBB3"
+
+msgid "It was developed by %1 and is written in PHP."
+msgstr "È stato sviluppato da %1 ed è scritto in PHP."
+
+msgid "Sources"
+msgstr "Sorgenti"
+
+msgid ""
+"phpbb-pastebin sources are freely available from my <a href=\"%1\">git "
+"repository</a>."
+msgstr ""
+"I sorgenti di phpbb-pastebin sono liberamente disponibili dal  mio <a href=\"%"
+"1\">repository  "
+"git</a>."
+
+msgid "License"
+msgstr "Licenza"
+
+msgid "phpbb-pastebin is licensed under the %1GPLv3%2 license."
+msgstr "phpbb-pastebin è disponibile sotto la licenza %1GPLv3%2 license."
+
+msgid "Libraries"
+msgstr "Librerie"
+
+msgid "To develop phpbb-pastebin, these libraries have been used:"
+msgstr "Per sviluppare phpbb-pastebin, sono state usate queste libreria:"
+
+msgid "%1, a front-end framework for faster and easier web development;"
+msgstr "%1, un front-end framework per un più veloce e facile sviluppo web;"
+
+msgid "%1, a Generic Syntax Highlighter;"
+msgstr "%1, un Generico Evidenziatore di Sintassi;"
+
+msgid "%1, a JavaScript library;"
+msgstr "%1, una libreria JavaScript;"
+
+msgid "%1, a library for gettext emulation in PHP;"
+msgstr "%1, una libreria per l'emulazione di gettext in PHP;"
+
+msgid "%1, a template engine;"
+msgstr "%1, un motore di template;"
+
+msgid ""
+"%1, a smarty plugin for using gettext in smarty templates, modified by me to "
+"use it with php-gettext."
+msgstr ""
+"%1, un plugin per smarty per usare gettext nei template di smarty, modificato "
+"da me per "
+"usarlo con php-gettext."
+
+msgid "Why this error?"
+msgstr "Perché questo errore?"
+
+msgid ""
+"You need to to go and login in the forum, then you have access here, please "
+"login!"
+msgstr ""
+"Devi effettuare il login nel forum, dopo avrai accesso qui, per favore "
+"fai il login!"
+
+msgid "Paste extract:"
+msgstr "Estratto del paste:"
+
+msgid "Posted at"
+msgstr "Pubblicato il"
+
+msgid "Hidden posting"
+msgstr "Pubblicazione nascosta"
+
+msgid "espires: <b>"
+msgstr "scade: <b>"
+
+msgid "Show as text"
+msgstr "Vedi come testo"
+
+msgid "Download"
+msgstr "Scarica"
+
+msgid "Without linenumbers"
+msgstr "Senza i numeri di linea"
+
+msgid "With linenumbers"
+msgstr "Con i numeri di linea"
+
+

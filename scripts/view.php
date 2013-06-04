@@ -44,7 +44,7 @@ else{
         $geshi->enable_line_numbers($flag);
         $code = $geshi->parse_code();
         
-        $smarty->assign('title', T_('View paste withh tid: ').$tid);
+        $smarty->assign('title', T_('View paste with tid: ').$tid);
         
         $smarty->assign('tid', $tid);
         $smarty->assign('username', $_['username']);

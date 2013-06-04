@@ -1,7 +1,7 @@
 {include file='header.tpl'}
         <div class="container">
             <form class="form-horizontal" action = "index.php?q=create" method = "post">
-                <h2 class="form-signin-heading">{t}Past zone{/t}</h2>
+                <h2 class="form-signin-heading">{t}Paste zone{/t}</h2>
                 
                 <label>{t}Language{/t}</label>
                 <select class="span2" name="lang">
@@ -240,7 +240,7 @@
                 
                 <label>{t}Expiration{/t}</label>
                 <select class="span2" name="expire">
-                    <option value="-1" selected>Never</option>
+                    <option value="-1" selected>{t}Never{/t}</option>
                     <option value="7776000">90d</option>
                     <option value="259200">3d</option>
                     <option value="86400">24h</option>

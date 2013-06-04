@@ -45,7 +45,7 @@
                         <!-- Left nav -->
                         <ul class="nav">
                             <!--<li><a href="index.php"><i class="icon-home icon-white"></i> {t}Home Page{/t}</a></li>-->
-                            <li><a href="index.php?q=list"><i class="icon-book icon-white"></i> {t}Publc past list{/t}</a></li>
+                            <li><a href="index.php?q=list"><i class="icon-book icon-white"></i> {t}Publc paste list{/t}</a></li>
                             <li><a href="index.php?q=create"><i class="icon-plus icon-white"></i> {t}Add a new paste{/t}</a></li>
                         </ul>
 {nocache}
