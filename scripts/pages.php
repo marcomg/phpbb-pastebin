@@ -1,6 +1,11 @@
 <?php
+// Set user menu
 if($phpbb->isLogged())
     $smarty->assign('user_menu', true);
+
+// Set admin menu
+if($phpbb->isAdmin())
+    $smarty->assign('admin_menu', true);
 
 if(empty($q[1]))
     $q[1] = '?';

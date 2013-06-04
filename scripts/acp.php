@@ -6,7 +6,13 @@ if(!$phpbb->isLogged() or !$phpbb->isAdmin()){
     exit;
 }
 else
+    // Set user menu
     $smarty->assign('user_menu', true);
+
+// Set admin menu
+if($phpbb->isAdmin())
+    $smarty->assign('admin_menu', true);
+
 
 if(!isset($q[1]))
     $q[1] = 'overview';
