@@ -6,5 +6,3 @@ To install phpbb-pastebin you need a phpbb board and add a table in your mysql d
 
 # How install this software #
 To install this software you'd better go to our Wiki.
-
-![Analytics](https://d2weczhvl823v0.cloudfront.net/marcomg/phpbb-pastebin/trend.png "Analytics")
