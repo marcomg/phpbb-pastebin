@@ -1,7 +1,7 @@
 {include file='header.tpl'}
         <div class="container">
             <p>
-                {if $hidden == true}{t}Hidden posting{/t}{else}{t}Posting{/t}{/if}: <b>{$tid}</b> {t}from{/t} <b>{$username}</b> {t}posted at{/t} <b>{$posted|date_format:"%d/%m/%Y %k:%M:%S"}</b> {t}espires: <b>{/t}{if $expires==-1}{t}Never{/t}{else}{{$posted + $expires}|date_format:"%d/%m/%Y %k:%M:%S"}{/if}</b>
+                {if $hidden == true}{t}Hidden posting{/t}{else}{t}Posting{/t}{/if}: <b>{$tid}</b> {t}from{/t} <b>{$username}</b> {t}posted at{/t} <b>{$posted|date_format:"%d/%m/%Y %H:%M:%S"}</b> {t}espires: <b>{/t}{if $expires==-1}{t}Never{/t}{else}{{$posted + $expires}|date_format:"%d/%m/%Y %H:%M:%S"}{/if}</b>
             </p>
             {$code}
             

@@ -9,7 +9,7 @@
             <ul>
 {section name=id loop=$tid}
                 <li>
-                    {t}Posting{/t} {t}from{/t} <b>{$username[id]}</b> {t}posted at{/t} <b>{$posted[id]|date_format:"%d/%m/%Y %k:%M:%S"}</b> {t}espires:{/t} <b>{if $expires[id]==-1}{t}Never{/t}{else}{{$posted[id]+$expires[id]}|date_format:"%d/%m/%Y %k:%M:%S"}{/if}</b> {t}Paste type:{/t} {if $hidden}{t}hidden{/t}{else}{t}public{/t}{/if}
+                    {t}Posting{/t} {t}from{/t} <b>{$username[id]}</b> {t}posted at{/t} <b>{$posted[id]|date_format:"%d/%m/%Y %H:%M:%S"}</b> {t}espires:{/t} <b>{if $expires[id]==-1}{t}Never{/t}{else}{{$posted[id]+$expires[id]}|date_format:"%d/%m/%Y %H:%M:%S"}{/if}</b> {t}Paste type:{/t} {if $hidden}{t}hidden{/t}{else}{t}public{/t}{/if}
                     <br/>
                     {* WARNING!! DON'T REMOVE ESCAPE OR YOU'LL DIE! *}
                     <a href="index.php?q=view/{$tid[id]}">{t}Little extract:{/t} {$code[id]|escape:"html"}</a><br/>

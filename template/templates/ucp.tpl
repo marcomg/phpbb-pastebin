@@ -6,7 +6,7 @@
                 <li>
 {* WARNING!! DON'T REMOVE ESCAPE OR YOU'LL DIE! *}
                     {t}Paste extract:{/t} <a href="index.php?q=view/{$tid[id]}"> {$code[id]|escape:"html"}</a><br/>
-                    {t}Posted at{/t} <b>{$posted[id]|date_format:"%d/%m/%Y %k:%M:%S"}</b> {t}espires:{/t} <b>{if $expires[id]==-1}{t}Never{/t}{else}{{$posted[id]+$expires[id]}|date_format:"%d/%m/%Y %k:%M:%S"}{/if}</b><br/>
+                    {t}Posted at{/t} <b>{$posted[id]|date_format:"%d/%m/%Y %H:%M:%S"}</b> {t}espires:{/t} <b>{if $expires[id]==-1}{t}Never{/t}{else}{{$posted[id]+$expires[id]}|date_format:"%d/%m/%Y %H:%M:%S"}{/if}</b><br/>
                     <a class="btn btn-danger" href="index.php?q=ucp/delete/{$tid[id]}">{t}Delete{/t}</a>
                     
                 </li>
