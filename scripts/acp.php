@@ -18,6 +18,41 @@ if(!isset($q[1]))
     $q[1] = 'overview';
 
 switch($q[1]){
+    case 'check_for_updates':
+        $smarty->assign('title', T_('Check for updates'));
+        
+        // Get this version
+        $_ = file(ROOT.'/version.txt');
+        $our_version = str_replace(PHP_EOL, null, $_[0]);
+        
+        // Take actually version
+        $_ = file('https://raw.github.com/marcomg/phpbb-pastebin/master/version.txt');
+        
+        // If there is an error
+        if(!$_){
+            $smarty->assign('error', T_('It is impossible to check for updates'));
+            $version = 0;
+        }
+        else{
+            $version = str_replace(PHP_EOL, null, $_[0]);
+        }
+        
+        // I check if there are updates
+        if($_ !== false){
+            $_ = version_compare($our_version, $version);
+            // If new updates
+            if($_ == -1){
+                $smarty->assign('available', true);
+                $smarty->assign('version', $version);
+            }
+            // else
+            else{
+                $smarty->assign('available', false);
+            }
+        }
+        $smarty->display('acp_check_for_updates.tpl');
+    break;
+    
     case 'delete':
         if(empty($q[2]) and empty($_POST['acp']))
             header('location: index.php?q=ucp');
