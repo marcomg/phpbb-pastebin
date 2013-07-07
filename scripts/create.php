@@ -20,7 +20,7 @@ if(!isset($_POST['lang']) or !isset($_POST['expire']) or empty($_POST['code'])){
     $smarty->display('create_form.tpl');
 }
 // Check paste size
-elseif(strlen($_POST['code']) > $config_max_paste_lenght){
+elseif(strlen($_POST['code']) > $config_max_paste_lenght and $config_max_paste_lenght !== 0){
     $smarty->assign('error', sprintf(T_('Paste too big! Max chars: %d'), $config_max_paste_lenght));
     $smarty->assign('title', T_('Create a paste'));
     $smarty->display('create_form.tpl');

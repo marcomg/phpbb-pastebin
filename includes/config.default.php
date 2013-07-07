@@ -22,8 +22,8 @@ $config_leng = 5;
 // Length of preview of pastes
 $config_preview_leng = 20;
 
-// Max lenght of a paste
-$config_max_paste_lenght = 10000000;// About 10 MiB
+// Max lenght of a paste if 0 has no limit
+$config_max_paste_lenght = 0;// About 10 MiB
 
 // Enable local cron
 $config_enable_cron = true;
