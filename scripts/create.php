@@ -15,13 +15,15 @@ if($phpbb->isAdmin())
 
 
 // If form not ok echo it
-if(!isset($_POST['lang']) or !isset($_POST['expire']) or empty($_POST['code'])/* and empty($_POST['upload']0)*/){
+if(!isset($_POST['lang']) or !isset($_POST['expire']) or empty($_POST['code'])){
     $smarty->assign('title', T_('Create a paste'));
     $smarty->display('create_form.tpl');
 }
-// Controllo dimensione e tipo
-elseif(0){
-    
+// Check paste size
+elseif(strlen($_POST['code']) > $config_max_paste_lenght){
+    $smarty->assign('error', sprintf(T_('Paste too big! Max chars: %d'), $config_max_paste_lenght));
+    $smarty->assign('title', T_('Create a paste'));
+    $smarty->display('create_form.tpl');
 }
 else{
     $username = $phpbb->getUsername();

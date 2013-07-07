@@ -6,9 +6,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-06-27 10:37+0200\n"
-"PO-Revision-Date: 2013-06-27 10:44+0200\n"
-"Last-Translator: Marco Guerrini\n"
+"POT-Creation-Date: 2013-07-07 20:53+0200\n"
+"PO-Revision-Date: 2013-07-07 20:55+0200\n"
+"Last-Translator: Marco Guerrini <mmarcogguerrini@cryptolab.net>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
 "MIME-Version: 1.0\n"
@@ -28,6 +28,11 @@ msgstr "Panoramica pannello acp"
 
 msgid "Create a paste"
 msgstr "Crea un paste"
+
+#, php-format
+msgid "Paste too big! Max chars: %d"
+msgstr ""
+"Il paste è troppo grande! Il massimo numero di caratteri consentiti è %d"
 
 msgid "Error 404"
 msgstr "Errore 404"
@@ -59,8 +64,8 @@ msgid ""
 "to go to the official website and download the latest version. Remember to "
 "read the guide on how to install the software!"
 msgstr ""
-"per andare al sito ufficiale e scaricare l'ultima versione. Ricorda di "
-"la guida su come installare il software!"
+"per andare al sito ufficiale e scaricare l'ultima versione. Ricorda di la "
+"guida su come installare il software!"
 
 msgid "You have the latest version available"
 msgstr "Hai l'ultima versione disponibile"
@@ -95,8 +100,8 @@ msgstr "nascosto"
 msgid "public"
 msgstr "pubblico"
 
-msgid "Little extract:"
-msgstr "Piccolo estratto:"
+msgid "Paste extract:"
+msgstr "Estratto del paste:"
 
 msgid "Delete"
 msgstr "Cancella"
@@ -229,9 +234,6 @@ msgstr ""
 "Devi effettuare il login nel forum, dopo avrai accesso qui, per favore fai "
 "il login!"
 
-msgid "Paste extract:"
-msgstr "Estratto del paste:"
-
 msgid "Posted at"
 msgstr "Pubblicato il"
 
@@ -252,5 +254,4 @@ msgstr "Senza i numeri di linea"
 
 msgid "With linenumbers"
 msgstr "Con i numeri di linea"
-
 
