@@ -11,7 +11,7 @@ require(ROOT.'/includes/classes/phpbbintegrator.class.php'); // a class for logi
 require(ROOT.'/includes/classes/geshi/geshi.php'); // a class for code parsing
 require(ROOT.'/includes/commons.php'); // commons file (for many actions)
 
-$phpbb = new phpbb_integrator($config_phpbb_path, $config_id_admin_groups);
+$phpbb = new phpbb_integrator($config_phpbb_path, $config_id_admin_groups, $config_alwaysLoadPhpBB);
 $db = new MYSQL();
 $smarty = new Smarty();
 

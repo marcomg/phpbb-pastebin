@@ -40,6 +40,10 @@ $config_phpbb_path = '../phpBB3/';
 // example : $config_id_admin_groups = array(5, 4); for administrators, global moderators
 $config_id_admin_groups = null;
 
+// If you set this var to true phpBB is always loaded in the class. This could slow all
+// but you have to do it if you want to sync the logout in the board and in phpbb-pastebin.
+// Else user will be logged as long as his browser is open though he is unlogged in phpBB
+$config_alwaysLoadPhpBB = false;
 /*
 Gettext config
 */
