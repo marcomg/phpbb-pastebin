@@ -1,4 +1,7 @@
 # 1.0 branch
+## 1.0.4-beta
+ * Optimized phpbbintegrator class
+ * Removed some notice bugs
 
 ## 1.0.3-beta
  * Added max paste size limit support
