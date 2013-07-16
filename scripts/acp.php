@@ -5,13 +5,11 @@ if(!$phpbb->isLogged() or !$phpbb->isAdmin()){
     header('location: index.php?q=errors/404');
     exit;
 }
-else
+else{
     // Set user menu
     $smarty->assign('user_menu', true);
-
-// Set admin menu
-if($phpbb->isAdmin())
     $smarty->assign('admin_menu', true);
+}
 
 
 if(!isset($q[1]))
@@ -85,7 +83,17 @@ switch($q[1]){
             $expires[] = $result['expires'];
             $hidden[] = $result['hidden'];
         }
-
+        
+        if(empty($tid)){
+            $tid = null;
+            $username = null;
+            $posted = null;
+            $code = null;
+            $lang = null;
+            $expires = null;
+            $hidden = null;
+        }
+        
         $smarty->assign('title', T_('Acp panel overview'));
         $smarty->assign('tid', $tid);
         $smarty->assign('username', $username);

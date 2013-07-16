@@ -12,7 +12,8 @@ else
 // Set admin menu
 if($phpbb->isAdmin())
     $smarty->assign('admin_menu', true);
-
+else
+    $smarty->assign('admin_menu', false);
 
 // If form not ok echo it
 if(!isset($_POST['lang']) or !isset($_POST['expire']) or empty($_POST['code'])){

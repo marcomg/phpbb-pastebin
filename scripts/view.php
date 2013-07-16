@@ -2,10 +2,14 @@
 // Set user menu
 if($phpbb->isLogged())
     $smarty->assign('user_menu', true);
-    
+else
+    $smarty->assign('user_menu', false);
+
 // Set admin menu
 if($phpbb->isAdmin())
     $smarty->assign('admin_menu', true);
+else
+    $smarty->assign('admin_menu', false);
 
 if(!empty($q[1]))
     $tid = $db->escape_string($q[1]);
@@ -13,9 +17,6 @@ else{
     header('location: index.php?q=errors/404');
     exit;
 }
-
-$smarty->caching = true;
-$smarty->cache_lifetime = -1;
 
 $_ = $db->query("SELECT * FROM `$config_table_paste` WHERE `tid` = '$tid'");
 $_ = $db->fetch_array($_);
@@ -29,7 +30,7 @@ else{
         $flag = GESHI_NO_LINE_NUMBERS;
         $smarty->assign('geshi_lines', false);
     }
-    elseif($q[2]=='fl'){
+    elseif(!empty($q[2]) and $q[2]=='fl'){
         $flag = GESHI_FANCY_LINE_NUMBERS;
         $smarty->assign('geshi_lines', true);
     }
@@ -54,7 +55,7 @@ else{
     $smarty->assign('sha1', $_['sha1']);
     $smarty->assign('hidden', $_['hidden']);
     
-    $smarty->display('view.tpl', $tid.$flag);
+    $smarty->display('view.tpl');
 }
 
 ?>

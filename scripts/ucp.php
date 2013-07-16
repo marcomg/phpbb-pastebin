@@ -39,7 +39,14 @@ switch($q[1]){
             $lang[] = $result['lang'];
             $expires[] = $result['expires'];
         }
-
+        
+        if(empty($tid)){
+            $tid = null;
+            $posted = null;
+            $code = null;
+            $lang = null;
+            $expires = null;
+        }
         $smarty->assign('title', T_('Personal pastes list'));
         $smarty->assign('tid', $tid);
         $smarty->assign('posted', $posted);
