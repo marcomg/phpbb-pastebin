@@ -1,5 +1,7 @@
 <?php
-
+/**
+* phpbbintegrator is a class written in php for integrate users from phpBB and an app written in phpBB.
+*/
 class phpbb_integrator {
     
     var $config_phpbb_path;
