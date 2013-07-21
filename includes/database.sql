@@ -1,6 +1,7 @@
 CREATE TABLE IF NOT EXISTS `paste` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tid` text COLLATE utf8_bin NOT NULL,
+  `uid` int(11) NOT NULL,
   `username` text COLLATE utf8_bin NOT NULL,
   `posted` text COLLATE utf8_bin NOT NULL,
   `code` longtext COLLATE utf8_bin NOT NULL,

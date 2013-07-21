@@ -1,0 +1,16 @@
+# What yoy need to install phpbb-pastebin
+## Needed software
+First install a LAMP and phpBB. I use [XAMPP](http://www.apachefriends.org/it/xampp.html) as development ambience.
+
+## How install phpbb-pastebin
+Extract phpbb-pastebin in a directory in the webserver you like most. Execute the sql code you can find in `includes/database.sql`
+
+Now you can copy the default config file `/includes/config.default.php` to `/includes/config.php`, open and config it.
+
+## Permissions
+All file have to be readable by the server, but there are two directories and a file which have to be writeable:
+`includes/text_databases/cron.txt` has to be writeable or you have to disable it in the config file and theese two smarty dirs:
+`template/cache` e `template/compiles`.
+Now phpbb-pastebin should work, if you have a problem you can send me a message.
+
+Don't delete version.txt file!

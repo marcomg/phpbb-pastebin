@@ -1,4 +1,7 @@
 # 1.0 branch
+## 1.1.0-beta
+ * Added usercontrol by uid and not my username
+ 
 ## 1.0.4-beta
  * Optimized phpbbintegrator class
  * Removed some notice bugs

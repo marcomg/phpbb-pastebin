@@ -1,0 +1,2 @@
+To update from 1.0.4 to 1.1.0 delete all files and replace with the new files and excute this query in the database:
+ALTER TABLE `paste` ADD `uid` INT NOT NULL AFTER `tid`;

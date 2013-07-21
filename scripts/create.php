@@ -27,6 +27,8 @@ elseif(strlen($_POST['code']) > $config_max_paste_lenght and $config_max_paste_l
     $smarty->display('create_form.tpl');
 }
 else{
+    $uid = $phpbb->getUserId();
+    
     $username = $phpbb->getUsername();
     
     $posted = time();
@@ -48,7 +50,7 @@ else{
     if(isset($_POST['wrap']) and $_POST['wrap']==1)
         $code = wordwrap($code, 78, PHP_EOL, true);
     
-    $db->query("INSERT INTO `$config_table_paste` (`id`, `tid`, `username`, `posted`, `code`, `lang`, `expires`, `sha1`, `hidden`) VALUES (NULL, '$tid', '$username', '$posted', '$code', '$lang', '$expires', '$sha1', '$hidden');");
+    $db->query("INSERT INTO `$config_table_paste` (`id`, `tid`, `uid`, `username`, `posted`, `code`, `lang`, `expires`, `sha1`, `hidden`) VALUES (NULL, '$tid', '$uid', '$username', '$posted', '$code', '$lang', '$expires', '$sha1', '$hidden');");
     
     header("location: index.php?q=view/$tid");
     

@@ -1,0 +1,19 @@
+<Files .htaccess>
+  deny from all
+</Files>
+
+<Files changelog.md>
+  deny from all
+</Files>
+
+<Files readme.md>
+  deny from all
+</Files>
+
+<Files update.txt>
+  deny from all
+</Files>
+
+<Files version.txt>
+  deny from all
+</Files>

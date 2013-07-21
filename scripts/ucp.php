@@ -22,7 +22,7 @@ switch($q[1]){
             header('location: index.php?q=ucp');
         else{
             $tid = $db->escape_string($q[2]);
-            $db->query("DELETE FROM `$config_table_paste` WHERE `username` = '{$phpbb->getUsername()}' AND `tid` = '$tid'");
+            $db->query("DELETE FROM `$config_table_paste` WHERE `uid` = '{$phpbb->getUserId()}' AND `tid` = '$tid'");
             header('location: index.php?q=ucp');
         }
     break;
@@ -30,7 +30,7 @@ switch($q[1]){
     default:
         $from = (!empty($q[2]) and is_numeric($q[2])) ? $db->escape_string($q[2]) : 0;
         
-        $query = $db->query("SELECT * FROM `paste` WHERE `username` = '{$phpbb->getUsername()}' ORDER BY `id` DESC LIMIT $from , 10");
+        $query = $db->query("SELECT * FROM `paste` WHERE `uid` = '{$phpbb->getUserId()}' ORDER BY `id` DESC LIMIT $from , 10");
 
         while($result = $db->fetch_array($query)){
             $tid[] = $result['tid'];
