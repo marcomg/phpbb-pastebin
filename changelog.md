@@ -1,4 +1,7 @@
 # 1.0 branch
+## 1.1.1-beta
+ * Updated smarty class and twitter bootstrap
+
 ## 1.1.0-beta
  * Added usercontrol by uid and not my username
  
