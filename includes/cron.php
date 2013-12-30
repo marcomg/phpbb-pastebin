@@ -1,4 +1,7 @@
 <?php
+/**
+ * Set activities to load sometimes.
+ */
 // Cron
 if($config_enable_cron){
     $_ = file_get_contents(ROOT.'/includes/text_databases/cron.txt');

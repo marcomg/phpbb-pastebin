@@ -1,4 +1,7 @@
 <?php
+/**
+ * Config page for the template engine.
+ */
 // Dir readable from web
 const DIR_TEMPLATE_VAR = './template/templates';
 

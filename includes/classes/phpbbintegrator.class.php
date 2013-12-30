@@ -1,24 +1,37 @@
 <?php
 /**
-* phpbbintegrator is a class written in php for integrate users from phpBB and an app written in phpBB.
-*/
+ * phpbb_integrator is a class written in php for integrate users from phpBB and an app written in phpBB.
+ */
 class phpbb_integrator {
     
+    /**
+     * The patch where is the config file of phpBB.
+     * @var string
+     */
     var $config_phpbb_path;
-    var $config_id_admin_groups;
+    
+    /**
+     * An array with user IDs that if an user has is admin.
+     * @var array or null
+     */
     var $adminGroups;
+    
+    /**
+     * If load or not phpBB everytimes or only when it is needed.
+     * @var bool
+     */
     var $alwaysLoadPhpBB;
     
     /**
-    * Set some vars and load init function.
-    * @param string $config_phpbb_path Patch where is installed phpBB
-    * @param array or null $config_id_admin_groups An array with user IDs that if an user has is admin
-    */
+     * Set some vars and load init function.
+     * @param string $config_phpbb_path Patch where is installed phpBB
+     * @param array or null $config_id_admin_groups An array with user IDs that if an user has is admin
+     * @param bool $alwaysLoadPhpBB if load always phpBB or only when it is needed
+     */
     function __construct($config_phpbb_path, $config_id_admin_groups = null, $alwaysLoadPhpBB = false){
         // Set vars
         $this->config_phpbb_path = $config_phpbb_path;
-        $this->config_id_admin_groups = $config_id_admin_groups;
-        $this->adminGroups = $this->config_id_admin_groups;
+        $this->adminGroups = $config_id_admin_groups;
         $this->alwaysLoadPhpBB = $alwaysLoadPhpBB;
         
         // Load class
@@ -26,8 +39,8 @@ class phpbb_integrator {
     }
     
     /**
-    * Provided to load all the class
-    */
+     * Provided to load all the class
+     */
     private function init(){
         $this->loadCheck();
         session_start();
@@ -35,8 +48,8 @@ class phpbb_integrator {
     }
     
     /**
-    * Control if some vars wich will be declared as global will be replaced
-    */
+     * Control if some vars wich will be declared as global will be replaced
+     */
     private function loadCheck(){
         global $phpbb_root_path, $phpEx, $user, $db, $config, $cache, $template;
         // If isset some of global vars I have to exit for not replace them
@@ -46,8 +59,8 @@ class phpbb_integrator {
     }
     
     /**
-    * Control if some vars are in $_SESSION supergolab var or provide to load it from pbpBB
-    */
+     * Control if some vars are in $_SESSION supergolab var or provide to load it from pbpBB
+     */
     private function loaderSelector(){
         if(empty($_SESSION['piap']['phpbbintegrator']) or $this->alwaysLoadPhpBB){
             $this->phpBBLoader();
@@ -55,8 +68,8 @@ class phpbb_integrator {
     }
     
     /**
-    * Load phpBB, then load a function wich provide to set some vars in $_SESSION
-    */
+     * Load phpBB, then load a function wich provide to set some vars in $_SESSION
+     */
     private function phpBBLoader(){
         global $phpbb_root_path, $phpEx, $user, $db, $config, $cache, $template;
         // Load phpbb files
@@ -81,8 +94,8 @@ class phpbb_integrator {
     }
     
     /**
-    * Provide to set some vars from phpBB user class in $_SESSION
-    */
+     * Provide to set some vars from phpBB user class in $_SESSION
+     */
     private function sessionBuilder($user){
         $_SESSION['piap']['is_registered'] = $user->data['is_registered'];
         $_SESSION['piap']['username'] = $user->data['username'];
@@ -101,9 +114,9 @@ class phpbb_integrator {
     
     
     /**
-    * Check if user il logged
-    * @return boolean True user logged, false user not logged
-    */
+     * Check if user il logged
+     * @return boolean True user logged, false user not logged
+     */
     function isLogged(){
         if($_SESSION['piap']['is_registered']){
             return true;
@@ -114,58 +127,58 @@ class phpbb_integrator {
     }
     
     /**
-    * Get username
-    * @return string Username
-    */
+     * Get username
+     * @return string Username
+     */
     function getUsername(){
         return $_SESSION['piap']['username'];
     }
     
     /**
-    * Get phpBB id of the user
-    * @return int User id
-    */
+     * Get phpBB id of the user
+     * @return int User id
+     */
     function getUserId(){
         return $_SESSION['piap']['user_id'];
     }
     
     /**
-    * Get phpBB id of the user
-    * @return int User id
-    */
+     * Get phpBB id of the user
+     * @return int User id
+     */
     function 
     getGroupId(){
         return $_SESSION['piap']['group_id'];
     }
     
     /**
-    * Get the email of the user
-    * @return string Email of the user
-    */
+     * Get the email of the user
+     * @return string Email of the user
+     */
     function getUserEmail(){
         return $_SESSION['piap']['user_email'];
     }
     
     /**
-    * Get the IP of the user
-    * @return string IP of the user
-    */
+     * Get the IP of the user
+     * @return string IP of the user
+     */
     function getUserIp(){
         return $_SESSION['piap']['ip'];
     }
     
     /**
-    * Get the language of the user
-    * @return string Language of the user
-    */
+     * Get the language of the user
+     * @return string Language of the user
+     */
     function getUserLang(){
         return $_SESSION['piap']['user_lang'];
     }
     
     /**
-    * Check if user il an admin
-    * @return boolean True user logged as admin, false user not logged as admin or not logged
-    */
+     * Check if user il an admin
+     * @return boolean True user logged as admin, false user not logged as admin or not logged
+     */
     function isAdmin(){
         if(!is_array($this->adminGroups))
             return false;
@@ -178,9 +191,9 @@ class phpbb_integrator {
     }
     
     /**
-    * Test function
-    * @deprecated
-    */
+     * Test function
+     * @deprecated
+     */
     function printr(){
         print_r($this->user);
     }

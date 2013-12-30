@@ -1,13 +1,16 @@
 <?php
-/*
-CORE FUNCTIONS
-*/
-
 /**
-* Get a casual alfanumeric string
-* @param int $long_string_gen Chars number of casual string
-* @return string Casual string
-*/
+ * This page content all functions of the script!
+ */
+
+/*
+ * Core functions (te functions of the framework).
+ */
+/**
+ * Get a casual alfanumeric string
+ * @param int $long_string_gen Chars number of casual string
+ * @return string Casual string
+ */
 function getCasualStr($long_string_gen){
 	$string_gen=NULL;
 	for ($i=1; $i<=$long_string_gen; $i++){
@@ -23,11 +26,11 @@ function getCasualStr($long_string_gen){
 
 
 /**
-* Get bytes value form kB(k), MB(M), GB(G)
-* @param string $val Size in kB, MB, GB
-* @return int Byte size
-* @deprecated
-*/
+ * Get bytes value form kB(k), MB(M), GB(G)
+ * @param string $val Size in kB, MB, GB
+ * @return int Byte size
+ * @deprecated
+ */
 function getBytes($val) {
     $val = trim($val);
     $last = $val{strlen($val)-1};
@@ -53,11 +56,11 @@ function getBytes($val) {
 
 
 /**
-* Get Human value form Bytes
-* @param int $val Size in byte
-* @return string size in KiB or MiB or GiB or TiB or PiB or EiB
-* @deprecated
-*/
+ * Get Human value form Bytes
+ * @param int $val Size in byte
+ * @return string size in KiB or MiB or GiB or TiB or PiB or EiB
+ * @deprecated
+ */
 function getHumanValue($val){
     if(!is_numeric($val)){
         return false;
@@ -125,11 +128,11 @@ function getHumanValue($val){
 }
 
 /**
-* Get language from browser or cookies
-* @param string $default_language Default language to user if there aren't results
-* @param array $known_languages Languages supported
-* @return string Language to use
-*/
+ * Get language from browser or cookies
+ * @param string $default_language Default language to user if there aren't results
+ * @param array $known_languages Languages supported
+ * @return string Language to use
+ */
 function getLanguage($default_language = 'en_US', $known_languages = array('en_US', 'it_IT')){
     if(!empty($_COOKIE['language'])){
         if(in_array($_COOKIE['language'], $known_languages)){
@@ -154,12 +157,12 @@ function getLanguage($default_language = 'en_US', $known_languages = array('en_U
 }
 
 /*
-SCRIPT FUNCTIONS
-*/
+ * Personal functions (the functions added for this script and aren't in the framework).
+ */
 /**
-* Get a casual unique id for pastes
-* @return string Unique id
-*/
+ * Get a casual unique id for pastes
+ * @return string Unique id
+ */
 function getNewTid(){
     global $db;
     global $config_leng;

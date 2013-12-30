@@ -1,4 +1,7 @@
 <?php
+/**
+ * The config for the main script. This is a default page to copy in the same directory with the name config.php.
+ */
 // Error reporting: 6143 for all errors, 0 for no errors
 error_reporting (6143);
 
